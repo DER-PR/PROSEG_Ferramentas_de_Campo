@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#143b50">
+<title>PROSEG · Ferramentas de Campo</title>
+<link rel="manifest" href="manifest.webmanifest">
+<style>
+  :root{
+    --azul:#1f5673;--azul-esc:#143b50;--azul-cl:#e5eef3;
+    --verde:#1f7a4d;--amarelo:#F2B705;
+    --tinta:#14201a;--cinza:#6a7883;--fundo:#eef1f3;--branco:#fff;--linha:#d3dbe0;
+    --sombra:0 1px 3px rgba(20,40,60,.10),0 6px 18px rgba(20,40,60,.06);
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;padding:0}
+  body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--fundo);color:var(--tinta);font-size:17px;line-height:1.4;-webkit-text-size-adjust:100%}
+  .wrap{max-width:560px;margin:0 auto;min-height:100vh}
+  header{background:linear-gradient(135deg,var(--azul),var(--azul-esc));color:#fff;padding:26px 18px calc(20px + env(safe-area-inset-top,0));box-shadow:var(--sombra)}
+  header .logo{width:52px;height:52px;border-radius:14px;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:12px}
+  header .t{font-weight:800;font-size:22px;letter-spacing:.2px}
+  header .s{font-size:13.5px;opacity:.9;margin-top:3px}
+  main{padding:16px 14px 40px}
+  .grp{font-size:12px;font-weight:800;color:var(--cinza);text-transform:uppercase;letter-spacing:1px;margin:22px 6px 10px;display:flex;align-items:center;gap:8px}
+  .grp::after{content:"";flex:1;height:1px;background:var(--linha)}
+  .card{display:flex;align-items:center;gap:14px;background:var(--branco);border-radius:16px;box-shadow:var(--sombra);padding:16px;margin-bottom:12px;text-decoration:none;color:inherit;border-left:6px solid var(--azul);transition:transform .05s}
+  .card:active{transform:scale(.985)}
+  .card .ic{flex:0 0 auto;width:50px;height:50px;border-radius:13px;background:var(--azul-cl);display:flex;align-items:center;justify-content:center;font-size:27px}
+  .card .txt{flex:1;min-width:0}
+  .card .nome{font-weight:800;font-size:16.5px}
+  .card .desc{font-size:13px;color:var(--cinza);margin-top:2px}
+  .card .seta{flex:0 0 auto;color:var(--cinza);font-size:22px;font-weight:700}
+  .card.lev{border-left-color:var(--amarelo)} .card.lev .ic{background:#fdf3d8}
+  .card.med{border-left-color:var(--verde)} .card.med .ic{background:#e3f3ea}
+  footer{text-align:center;color:var(--cinza);font-size:12px;padding:10px 16px 30px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="logo">🛠️</div>
+    <div class="t">PROSEG · Ferramentas de Campo</div>
+    <div class="s">DER/PR · Contrato 122/2021 — Lote 1</div>
+  </header>
+  <main>
+    <div class="grp">📏 Medições</div>
+
+    <a class="card med" href="https://der-pr.github.io/PROSEG_NS_Vertical/">
+      <div class="ic">🚦</div>
+      <div class="txt"><div class="nome">Sinalização Vertical</div><div class="desc">Medição de placas e retrorrefletância</div></div>
+      <div class="seta">›</div>
+    </a>
+
+    <a class="card med" href="https://der-pr.github.io/PROSEG_NS_Defensas/">
+      <div class="ic">🛡️</div>
+      <div class="txt"><div class="nome">Defensas Metálicas</div><div class="desc">Verificação de NS de defensas</div></div>
+      <div class="seta">›</div>
+    </a>
+
+    <div class="grp">📝 Levantamentos</div>
+
+    <a class="card lev" href="https://der-pr.github.io/PROSEG_Levantamento_Canalizacao_e_Inscricao/">
+      <div class="ic">🛣️</div>
+      <div class="txt"><div class="nome">Canalização e Inscrições</div><div class="desc">Levantamento de sinalização horizontal</div></div>
+      <div class="seta">›</div>
+    </a>
+
+    <a class="card lev" href="https://der-pr.github.io/PROSEG_Levantamento_Defensas/">
+      <div class="ic">🛡️</div>
+      <div class="txt"><div class="nome">Defensas Metálicas</div><div class="desc">Levantamento: situação, danos e fotos</div></div>
+      <div class="seta">›</div>
+    </a>
+  </main>
+  <footer>PROSEG · DER/PR — selecione a ferramenta</footer>
+</div>
+<script>
+  if("serviceWorker" in navigator){ try{ navigator.serviceWorker.register("sw.js"); }catch(e){} }
+</script>
+</body>
+</html>
